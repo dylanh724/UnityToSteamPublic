@@ -15,7 +15,7 @@ We wanted to streamline the build process. The more automated, the better!
 
 2. REM (comment) out anything you don't want. Edit to your liking.
 
-3. Save as .bat and give it admin privs (or remember to "run as admin"), dropped in root Unity dir.
+3. Save as .bat and give it admin privs (or remember to "run as admin"), dropped in root Unity PROJECT dir.
 
 4. Launch it after you build.
 
