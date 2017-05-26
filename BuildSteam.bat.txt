@@ -1,0 +1,56 @@
+@ECHO OFF
+REM This is the "vague path" version preventing NDA. See README for full version, if you have access to Steamworks partner site.
+REM ##############################################################################################
+REM # by Imperium42 Game Studio @ https://www.imperium42.com                                     
+REM # 1 - Delete the old \windows_content\ contents												 
+REM # 2 - Copy steam ./build/ contents to /<your_steam_content>/
+REM # 3 - Launch Steamworks build page on default browser							 
+REM # 4 - Launch PlayFab title data page on default browser (REM'd out for public, but as idea)
+REM # 3 - Launch Steam upload batch file 														 
+REM ##############################################################################################
+ECHO Starting...
+REM ___________________________________________________________
+ECHO [INIT] Setting variable paths...
+REM >>>>>>>>>>>>>>>>>>>>>>>
+REM Don't use "quotes" for your paths. We'll quote it later
+REM BUILD_PATH is Unity's build path
+REM >>>>>>>>>>>>>>>>>>>>>>>
+SET STEAM_BAT_NAME=<something.bat>
+SET BUILD_PATH=.\build
+SET CONTENT_BUILDER_PATH=C:\<PathToContentBuilder>
+SET WWW_BUILD=https://partner.steamgames.com/<path_to_your_build_id>
+SET WWW_PF=https://developer.playfab.com/en-us/<your_title_id>/content/title-data
+
+REM ___________________________________________________________
+ECHO [INIT] Setting other paths from variable...
+SET CONTENT_PATH=%CONTENT_BUILDER_PATH%\content\windows_content
+SET EMPTY=%CONTENT_PATH%\empty
+
+REM ___________________________________________________________
+ECHO [#1] Deleting old Steam content ...
+mkdir "%EMPTY%"
+ROBOCOPY /mir "%EMPTY%" "%CONTENT_PATH%"
+REM del /S /Q "%CONTENT_PATH%\"
+
+REM ___________________________________________________________
+ECHO [#2] Copying new files to your Steam content ...
+ROBOCOPY /COPYALL /E "%BUILD_PATH%" "%CONTENT_PATH%"
+
+REM ___________________________________________________________
+ECHO [#4] Launch Steamworks build page on default browser
+START %WWW_BUILD%
+
+REM **COMMENTED OUT**
+REM ___________________________________________________________
+REM ECHO [#5] Launch PlayFab title data page on default browser
+REM START %WWW_PF%
+
+REM ___________________________________________________________
+ECHO [#5] Launch Steam upload batch file
+CD /d "%CONTENT_BUILDER_PATH%"
+cmd.exe /c CALL %STEAM_BAT_NAME%
+
+REM ___________________________________________________________
+ECHO Done.
+PAUSE
+REM EXIT
