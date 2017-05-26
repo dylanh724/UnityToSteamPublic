@@ -1,6 +1,12 @@
 # UnityToSteamPublic
 [Windows] Streamlining the upload from Unity to Steam. Milked-down version to protect NDA.
 
+## This is the "Vague-Paths" version to protect Steam NDA
+For the "way more intuitive version", go here, if you have access by being a Steam partner:
+https://steamcommunity.com/groups/steamworks/discussions/0/1291817208490243818/
+
+## Instructions
+
 1. Edit the contents to ensure your path matches via the constants at top.
 
 2. REM (comment) out anything you don't want. Edit to your liking.
@@ -24,3 +30,5 @@ REM ############################################################################
 ## License: MIT. 
 Do whatever you want with it. Customize it. Make it better.
 No need to keep the "by", either.
+
+I am in no way related to Steam other than being a Steamworks partner. This is my own code for me and is, in no way, official code.
