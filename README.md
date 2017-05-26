@@ -5,6 +5,10 @@
 For the "way more intuitive version", go here, if you have access by being a Steam partner:
 https://steamcommunity.com/groups/steamworks/discussions/0/1291817208490243818/
 
+## Origins
+Originally used for our Steam game, [Throne of Lies: The Online Game of Deceit](https//www.ThroneOfLies.com) 
+We wanted to streamline the build process. The more automated, the better! 
+
 ## Instructions
 
 1. Edit the contents to ensure your path matches via the constants at top.
